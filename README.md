@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Proyek Dashboard NextJS
 
-## Getting Started
+Proyek ini adalah demonstrasi aplikasi Next.js sederhana dengan fokus pada komponen UI dan struktur.
 
-First, run the development server:
+## Daftar Isi
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Instalasi](#instalasi)
+- [Penggunaan](#penggunaan)
+- [Komponen](#komponen)
+- [Lisensi](#lisensi)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalasi
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone repositori:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```sh
+   git clone https://github.com/devnolife/next-dashboard-template.git
+   cd next-dashboard-template
+   ```
 
-## Learn More
+2. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```sh
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Jalankan server pengembangan:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```sh
+   npm run dev
+   ```
 
-## Deploy on Vercel
+## Penggunaan
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Untuk melihat aplikasi, buka browser Anda dan pergi ke `http://localhost:3000`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Komponen
+
+### Komponen Page
+
+Ini adalah komponen halaman utama dari aplikasi. Komponen ini mencakup pesan selamat datang, tautan ke Kursus Belajar Next.js, dan tombol login. Tata letak menyesuaikan untuk berbagai ukuran layar, dengan tata letak kolom untuk layar kecil dan tata letak baris untuk layar lebih besar.
+
+### Komponen AcmeLogo
+
+Komponen ini menampilkan logo untuk Acme. Ini menggunakan font `Lusitana` dan mencakup ikon dari perpustakaan Heroicons.
+
+### Komponen Breadcrumbs
+
+Komponen ini menampilkan navigasi breadcrumb. Ini mengambil array objek breadcrumb dan menampilkannya sebagai jalur navigasi yang dapat diklik, menunjukkan halaman saat ini.
+
+### Komponen NavLinks
+
+Komponen ini menampilkan tautan navigasi untuk bilah navigasi samping. Ini menggunakan ikon dari perpustakaan Heroicons dan mendukung tautan dinamis, yang dapat diperluas sesuai kebutuhan.
+
+### Komponen SideNav
+
+Komponen ini mewakili bilah navigasi samping. Ini mencakup logo Acme, tautan navigasi, dan tombol logout.
+
+### Komponen Invoice
+
+Komponen-komponen ini (`CreateInvoice`, `UpdateInvoice`, `DeleteInvoice`, dan `InvoicesTable`) mengelola fungsionalitas terkait faktur seperti membuat, memperbarui, dan menghapus faktur, serta menampilkan daftar faktur. Mereka mencakup berbagai elemen UI seperti tombol, ikon, dan formulir.
+
+### Komponen InvoiceStatus
+
+Komponen ini menampilkan status faktur, seperti 'pending' atau 'paid', dengan ikon dan warna yang sesuai untuk setiap status.
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah lisensi MIT. Lihat file [LICENSE](LICENSE) untuk informasi lebih lanjut.
+
+---
+
+Dengan penjelasan di atas, Anda dapat memahami struktur dan fungsionalitas dari berbagai komponen yang ada di proyek ini.
