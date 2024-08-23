@@ -1,8 +1,8 @@
-// import bcrypt from 'bcrypt';
-// import { db } from '@vercel/postgres';
-// import { invoices, customers, revenue, users } from '../lib/placeholder-data';
+ import bcrypt from 'bcrypt';
+ import { db } from '@vercel/postgres';
+ import { invoices, customers, revenue, users } from '../lib/placeholder-data';
 
-// const client = await db.connect();
+ const client = await db.connect();
 
 async function seedUsers() {
   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
@@ -102,24 +102,18 @@ async function seedRevenue() {
 }
 
 export async function GET() {
-  return new Response(
-    JSON.stringify({
-      message:
-        'Uncomment this file and remove this line. You can delete this file when you are finished.',
-    }),
-    { status: 200, headers: { 'Content-Type': 'application/json' } }
-  );
-  // try {
-  //   await client.sql`BEGIN`;
-  //   await seedUsers();
-  //   await seedCustomers();
-  //   await seedInvoices();
-  //   await seedRevenue();
-  //   await client.sql`COMMIT`;
+  
+  try {
+     await client.sql`BEGIN`;
+     await seedUsers();
+     await seedCustomers();
+     await seedInvoices();
+     await seedRevenue();
+     await client.sql`COMMIT`;
 
-  //   return new Response(JSON.stringify({ message: 'Database seeded successfully' }), { status: 200 });
-  // } catch (error) {
-  //   await client.sql`ROLLBACK`;
-  //   return new Response(JSON.stringify({ error }), { status: 500 });
-  // }
+     return new Response(JSON.stringify({ message: 'Database seeded successfully' }), { status: 200 });
+   } catch (error) {
+     await client.sql`ROLLBACK`;
+     return new Response(JSON.stringify({ error }), { status: 500 });
+   }
 }
